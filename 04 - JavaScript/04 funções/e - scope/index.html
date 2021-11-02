@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funções - Scope</title>
+  </head>
+  <body>
+    <h2>Let</h2>
+    <h3>Escopo global</h3>
+    <p>
+      Quando declaramos uma variável com let fora da estrutura, ela pode ser
+      acessada de qualquer parte da aplicação, possuindo um escopo global.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let spaceshipName = "Supernova";
+
+          function changeSpaceshipName() {
+            spaceshipName = "Elemental";
+          }
+
+          console.log(spaceshipName); //"Supernova"
+          changeSpaceshipName();
+          console.log(spaceshipName); //"Elemental"
+        </pre>
+      </code>
+    </p>
+
+    <h3>Escopo local</h3>
+    <p>
+      Quando declaramos dentro da função, ela só pode ser acessada dentro da
+      mesma. Quando essa declaração é feita, chamamos de escopo local.
+    </p>
+
+    <h4>Exemplo 1</h4>
+    <p>
+      <code>
+        <pre>
+      function startSpaceshipVelocity() {
+        let spaceshipVelocity = 0;
+      }
+      
+      startSpaceshipVelocity();
+      console.log(spaceshipVelocity); //spaceshipVelocity is not defined
+    </pre
+        >
+      </code>
+    </p>
+
+    <h4>Exemplo 2</h4>
+    <p>
+      <code>
+        <pre>
+      function startSpaceshipVelocity() {
+        let spaceshipVelocity = 0;
+      }
+
+      let spaceshipVelocity = 200
+      
+      startSpaceshipVelocity();
+      console.log(spaceshipVelocity); 
+    </pre
+        >
+      </code>
+    </p>
+
+    <h4>Exemplo 3</h4>
+
+    <p>
+      <code>
+        <pre>
+      function setSpaceshipDetails() {
+        let velocity = 50;
+        if (velocity == 50) {
+          velocity = 60;
+          var spaceshipName = "Elemental";
+          let spaceshipType = "Discovery";
+        }
+
+        console.log(velocity); // dentro do escopo local, acessado pela função, então atualizou o valor de 50 para 60
+        console.log(spaceshipName); //podemos acessar dentro do escopo mais elevado
+        console.log(spaceshipType); //Erro de referência, pois essa variável só pertence ao escopo do if
+      }
+
+      setSpaceshipDetails();</pre
+        >
+      </code>
+    </p>
+
+    <h4>Exemplo 4</h4>
+    <p>
+      <code>
+        <pre>
+          function setSpaceshipDetails() {
+            console.log(spaceshipName);
+            console.log(spaceshipType);
+            
+            var spaceshipName = "Elemental";
+            let spaceshipType = "Discovery";
+            console.log(spaceshipName); //undefined
+            console.log(spaceshipType); //ReferenceError
+          }
+          
+          setSpaceshipDetails();
+         
+        </pre>
+      </code>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
