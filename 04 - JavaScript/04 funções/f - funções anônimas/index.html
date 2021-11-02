@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funções anônimas</title>
+  </head>
+  <body>
+    <p>
+      Funções que têm nome omitido no momento da criação. Utilizada, geralmente,
+      para ser armazenada em variáveis.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let doubleSpeed = function(velocity){
+            return velocity * 2
+          }
+
+          let newVelocity = doubleSpeed(40)
+          console.log(newVelocity)
+        </pre>
+      </code>
+    </p>
+
+    <p>
+      A declaração de uma função na forma tradicional faz com q ela seja lida
+      antes de tudo no escopo do código, como acontece no caso abaixo.
+    </p>
+
+    <p>
+      Porém, as funções anônimas, por serem atribuídas em variável, seguem a
+      mesma regra de chamada de variáveis e o que procava erro no caso abaixo,
+      já que foi declarada com let e não foi inicializada.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          console.log(speedUp(60, 10));
+          console.log(doubleSpeed(50));
+
+          let doubleSpeed = function (velocity) {
+            return velocity * 2;
+          };
+
+          function speedUp(velocity, acceleration) {
+            return velocity + acceleration;
+          }
+
+        </pre>
+      </code>
+    </p>
+    <script src="script.js"></script>
+  </body>
+</html>
