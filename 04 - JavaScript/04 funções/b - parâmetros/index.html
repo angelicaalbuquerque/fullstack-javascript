@@ -22,6 +22,65 @@
       parâmetro na hora da chamada da função.
     </p>
 
+    <h2>Armadilhas de Parâmetros</h2>
+
+    <ol>
+      <li>
+        Quando chamamos uma função sem parâmetro necessário: no JS, nenhum
+        parâmetro é, de fato, obrigatório. Como um parâmetro é como uma variável
+        dentro da função, por padrão tem valor undefined. E quando não existe
+        nenhum valor padrão definido para o parâmetro, ele imprime undefined.
+      </li>
+      <br />
+      <li>Ordem dos parâmetros:</li>
+
+      <code>
+        <pre>
+function spaceshipSpeedUp(spaceshipVelocity, unit = "km/s",
+        spaceshipAcceleration) { 
+          let newSpaceshipVelocity = spaceshipVelocity + 
+          spaceshipAcceleration; 
+          console.log("Nova velocidade: " + newSpaceshipVelocity); 
+        } 
+        
+        spaceshipSpeedUp(50, 20);</pre
+        >
+      </code>
+
+      <p>
+        <code>spaceshipVelocity</code>recebe 50, <code>unit</code> recebe 20 e
+        <code>spaceshipAcceleration</code> recebe <code>undefined</code>. Na
+        hora de fazer a soma, a função tenta somar 50 + <code>undefined</code>.
+        No JS, como não consegue fazer operação aritmética, retorna o valor
+        <code>NaN</code> (Not a Number).
+      </p>
+
+      <p>
+        Já que a atribuição é feita na mesma ordem que a função foi declarada,
+        se a gente tem um valor padrão entre dois sem, o JS não vai jogar os
+        valores pra quem não tem valor padrão, vai continuar atribuindo na mesma
+        ordem que a função foi declarada. A atribuição sempre vai ocorrer na
+        ordem da declaração.
+      </p>
+
+      <p>
+        Para contornar esse problema, nesse caso, poderíamos colocar "unit" como
+        parâmetro final. Assim, seria exibido <code>"70 km/s"</code>.
+      </p>
+
+      <code>
+        <pre>
+function spaceshipSpeedUp(spaceshipVelocity spaceshipAcceleration, unit = "km/s",) { 
+          let newSpaceshipVelocity = spaceshipVelocity + 
+          spaceshipAcceleration; 
+          console.log("Nova velocidade: " + newSpaceshipVelocity); 
+        } 
+        
+        spaceshipSpeedUp(50, 20);</pre
+        >
+      </code>
+    </ol>
+
     <script src="script.js"></script>
   </body>
 </html>
