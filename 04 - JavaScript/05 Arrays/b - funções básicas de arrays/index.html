@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funções básicas de arrays</title>
+  </head>
+  <body>
+    <p>push: adiciona um elemento no final do array</p>
+    <p>
+      <code>
+        <pre>
+      let hitchedSpaceships = ["Colossus", "Elemental", "Helmet"];
+      console.log(hitchedSpaceships);
+      //(3) ['Colossus', 'Elemental', 'Helmet']
+
+      hitchedSpaceships.push("Supernova");
+      console.log(hitchedSpaceships);
+      //(4) ['Colossus', 'Elemental', 'Helmet', 'Supernova']
+    </pre
+        >
+      </code>
+    </p>
+
+    <p>
+      Pop: remove o elemento da última posição e, em uma variável, retorna esse
+      último elemento removido.
+    </p>
+    <p>
+      <code>
+        <pre>
+          let removedSpaceship = hitchedSpaceships.pop();
+          console.log(removedSpaceship);
+        </pre>
+      </code>
+    </p>
+
+    <p>
+      Shift: remove o elemento que está na primeira posição. E, assim como a
+      pop, também retorna o elemento que foi removido.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let removedWithShift = hitchedSpaceships.shift();
+          console.log(removedWithShift); //Colossus
+          console.log(hitchedSpaceships); //(2) ['Elemental', 'Helmet']
+        </pre>
+      </code>
+    </p>
+
+    <p>Unshift: oposto da shift, adicionando um elemento ao começo do array.</p>
+
+    <p>
+      <code>
+        <pre>
+          let addUnshift = hitchedSpaceships.unshift("Phoenix");
+          console.log(hitchedSpaceships);
+          //(3) ['Phoenix', 'Elemental', 'Helmet']
+
+        </pre>
+      </code>
+    </p>
+
+    <p>
+      IndexOf: retorna a posição de um elemento e retorna também resposta quando
+      não encontra (-1).
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let hitchedSpaceships = ["Colossus", "Elemental", "Helmet"];
+          console.log(hitchedSpaceships);
+
+          hitchedSpaceships.push("Supernova");
+          console.log(hitchedSpaceships);
+
+          let removedSpaceship = hitchedSpaceships.pop();
+          console.log(removedSpaceship);
+
+          let removedWithShift = hitchedSpaceships.shift();
+          console.log(removedWithShift);
+          console.log(hitchedSpaceships);
+
+          let addUnshift = hitchedSpaceships.unshift("Phoenix");
+          console.log(hitchedSpaceships);
+
+          console.log(hitchedSpaceships.length);
+
+          let elementalPosition = hitchedSpaceships.indexOf("Elemental");
+          console.log(elementalPosition);
+
+        </pre>
+      </code>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
