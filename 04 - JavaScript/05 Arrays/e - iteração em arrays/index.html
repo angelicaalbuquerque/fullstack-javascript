@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iteração em Arrays</title>
+  </head>
+  <body>
+    <p>
+      As funções de iterações que veremos são HOF - enviamos callbacks (funções
+      que enviamos como parâmetro).
+    </p>
+
+    <p>O callback é chamado para cada elemento do Array.</p>
+
+    <p>Segue o seguinte formato:</p>
+
+    <p>
+      <code>
+        <pre>
+      array.funcaoDeIterar(function(elementoAtual, indice, array)) {
+        //corpo da função
+      }
+    </pre
+        >
+      </code>
+    </p>
+
+    <p>
+      Espera um callback que receba como parâmetro o elemento atual, o índice e
+      o array completo.
+    </p>
+
+    <h3>forEach</h3>
+    <p>Percorre um array e, para cada elemento, chama o callback declarado.</p>
+
+    <p>
+      <code>
+        <pre>
+          let hitchedSpaceships = ["Deméter", "Darwin", "Supernova", "Fenix", "Puller"];
+
+          hitchedSpaceships.forEach(function (currentSpaceship, index) {
+            console.log("Nave: " + currentSpaceship + "\nÍndice: " + index);
+          });
+
+          /* 
+          Nave: Deméter
+          Índice: 0
+          script.js:5 Nave: Darwin
+          Índice: 1
+          script.js:5 Nave: Supernova
+          Índice: 2
+          script.js:5 Nave: Fenix
+          Índice: 3
+          script.js:5 Nave: Puller
+          Índice: 4 
+          */
+
+        </pre>
+      </code>
+    </p>
+
+    <h3>Map</h3>
+    <p>
+      Modifica os elementos do array, um a um, sem alterar o array original.
+      Então, ele vai percorrer cada elemento; vai alterar esse elemento pelo
+      retorno que vamos colocar no calback e pegar esse novo array que foi
+      gerado e retornar.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let upcasedSpaceships = hitchedSpaceships.map(function (currentSpaceship) {
+            let upcased = currentSpaceship.toUpperCase();
+            return upcased;
+          });
+          
+          console.log(upcasedSpaceships); //(5) ['DEMÉTER', 'DARWIN', 'SUPERNOVA', 'FENIX', 'PULLER']
+
+        </pre>
+      </code>
+    </p>
+
+    <h3>Filter</h3>
+
+    <p>
+      Filtra os elementos do array. Essa função aguarda um retorno booleano do
+      callback para saber se o elemento passou no filtro ou não. Então, se para
+      cada elemento retornar true, insere no array.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let with7Chars = hitchedSpaceships.filter((element) => {
+            return element.length >= 7;
+          });
+          console.log(with7Chars); //(2) ['Deméter', 'Supernova']
+        </pre>
+      </code>
+    </p>
+
+    <h3>Find</h3>
+
+    <p>
+      Parece com a Filter, mas a diferença é que vai retornar o primeiro
+      elemento que satisfazer essa condição lógica. E enquanto o Filter retorna
+      um novo array, o Find retorna o elemento em si.
+    </p>
+
+    <p>
+      <code>
+        <pre>
+        let with6Chars = hitchedSpaceships.find((element) => {
+          return element.length <= 6;
+        });
+        
+        console.log(hitchedSpaceships); //(5) ['Deméter', 'Darwin', 'Supernova', 'Fenix', 'Puller']
+        console.log(with6Chars); //Darwin
+      </pre
+        >
+      </code>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
