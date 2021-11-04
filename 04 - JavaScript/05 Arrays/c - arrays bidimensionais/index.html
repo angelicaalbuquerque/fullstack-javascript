@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays bidimensionais</title>
+  </head>
+  <body>
+    <p>Array bidimensional é um array que armazena outro array.</p>
+
+    <p>
+      <code>
+        <pre>
+          let hitchedSpaceships = [
+            ["Elemental", 7],
+            ["Helmet", 5],
+            ["Golias, 5"],
+            ["SuperNova", 10],
+          ];
+
+        //acessando o primeiro elemento
+        console.log(hitchedSpaceships[0]);
+
+        //adicionando outro array
+        hitchedSpaceships.push(["Phoenix", 8]);
+        console.log(hitchedSpaceships);
+
+        //acessando a primeira posição do 4º array
+        console.log(hitchedSpaceships[3][0]);
+
+        //acessando o primeiro elemento do array dentro array SuperNova
+        console.log(hitchedSpaceships[3][1][0]);
+
+        </pre>
+      </code>
+    </p>
+    <script src="script.js"></script>
+  </body>
+</html>
