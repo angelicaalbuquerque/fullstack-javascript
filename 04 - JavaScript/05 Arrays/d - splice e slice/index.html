@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow functions</title>
+  </head>
+  <body>
+    <p>
+      Muito utilizados para manipular elementos que estão no meio dos arrays.
+    </p>
+
+    <h2>Splice</h2>
+
+    <p>
+      <ul>
+        <li>Significa "emendar" ou "costurar"</li>
+        <li>Substitui o array original</li>
+        <li>
+          A sintaxe é: <code>array.splice(index[, deleteCount[, elemento1[, ...[, elementoN]]]])</code>
+        </li>
+        <li>Espera um primeiro parâmetro, que é um índice do Array. O segundo é a quantidade de elementos que queremos remover a partir desse índice. Os próximos são os elementos que queremos adicionar no lugar. Apenas o primeiro parâmetro é obrigatório.</li>
+      </ul>
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          let spaceshipNames = ["Elemental", "Darwin", "Artemis", "Supernova"];
+          console.log(spaceshipNames); //(4) ['Elemental', 'Darwin', 'Artemis', 'Supernova']
+
+          //remover o primeiro e segundo elemento e acrescentar outros três
+          let removedSpaceships = spaceshipNames.splice(
+            1,
+            2,
+            "Deméter",
+            "Puller",
+            "Golias",
+          );
+          console.log(spaceshipNames); //(5) ['Elemental', 'Deméter', 'Puller', 'Golias', 'Supernova']
+          console.log(removedSpaceships); //(2) ['Darwin', 'Artemis']
+
+        </pre>
+      </code>
+    </p>
+
+    <h2>Slice</h2>
+
+    <ul>
+      <li>Significa "fatiar" ou "dividir"</li>
+      <li>Extrai uma parte do array sem alterar o array original</li>
+      <li>A sintaxe é: <code>arr.slice([begin[, end]])</code></li>
+      <li>Possui um primeiro parâmetro que é o índice inicial. O segundo parâmetro é o índice final. Retorna todos os elementos entre o elemento de índice "begin" e o anterior ao elemento "end". Ou seja, se chamarmos com 1 e 5, vai pegar os elementos 1-2-3-4, não o último.</li>
+    </ul>
+
+    <p>
+      <code>
+        <pre>
+          let extractedNames = spaceshipNames.slice(1, 3);
+          console.log(spaceshipNames); //(5) ['Elemental', 'Deméter', 'Puller', 'Golias', 'Supernova']
+          console.log(extractedNames); //(2) ['Deméter', 'Puller']
+        </pre>
+      </code>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
