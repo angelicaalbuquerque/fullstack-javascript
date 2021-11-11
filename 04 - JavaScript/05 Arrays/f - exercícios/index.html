@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando Arrays</title>
+  </head>
+  <body>
+    <p>
+      Dado um array bidimensional de naves que estão engatas numa estação
+      espacial:
+    </p>
+
+    <p>
+      <code>
+        <pre>
+          const hitchedSpaceships = [
+            ["Fenix", 8, true],
+            ["Golias", 10, true],
+            ["Helmet", 5, false],
+            ["Elemental", 3, true],
+            ["Darwin", 15, false]
+          ]
+        </pre>
+      </code>
+    </p>
+
+    <p>
+      Para cada sub-array, a primeira posição é o nome da nave, a segunda a
+      quantidade de tripulantes e a terceira a informação se o processo de
+      engate já foi concluído ou não.
+    </p>
+
+    <p>
+      Nesta lista, a plataforma de engate que a nave está parada é o [índice da
+      nave no array + 1]. Por exemplo, a nave Fenix, a plataforma de engate é 0
+      + 1.
+    </p>
+
+    <p>Com base nesse array, queremos:</p>
+
+    <ol>
+      <li>Filtrar o nome das naves que têm mais de 9 tripulantes;</li>
+      <li>
+        Informar o número da plataforma em que está a primeira nave que ainda
+        está com engate pendente -- utilize a função findIndex, que é bem parece
+        com o Find, mas retorna o índice de um filtro em vez do elemento do
+        Array;
+      </li>
+      <li>
+        Destacar o nome de todas as naves colocando-as em caixa alta e exibindo;
+      </li>
+      <li>Exibir um alerta om todas estas informações.</li>
+    </ol>
+
+    <script src="script.js"></script>
+  </body>
+</html>
