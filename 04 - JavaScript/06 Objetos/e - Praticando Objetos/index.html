@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando Objetos</title>
+  </head>
+  <body>
+    <p>
+      Aplicativo que fará o mapeamento de velocidade de uma espaçonave. Nele,
+      vamos cadastrar uma espaçonave com seu nome, tipo e a velocidade máxima
+      que esta nave pode atingir para que não entre em combustão.
+    </p>
+    <ol>
+      <li>A nave deve partir da velocidade 0km/s</li>
+      <li>
+        Menu deve ser exibido para o usuário perguntando se ele quer acelerar ou
+        parar a nave
+      </li>
+      <ul>
+        <li>
+          Se ele quiser parar, uma mensagem deve ser exibida com as
+          características da name (nome e tipo) e em que velocidade ele estava
+        </li>
+        <li>
+          Se ele quiser acelerar, deve ser exibido um prompt para que ele
+          informe quanto ele quer acelerar e este valor será incrementado na
+          velocidade
+        </li>
+      </ul>
+      <li>
+        Quando a velocidade for incrementada, deve-se fazer uma verificação para
+        ver se a espaçoname está acima da velocidade máxima dela. Se estiver,
+        exibir mensagem informando a velocidade da name e a velocidade máxima
+        permitida.
+      </li>
+    </ol>
+
+    <p>Para resolver este problema, é preciso:</p>
+
+    <ol>
+      <li>Exibir prompt para nome da nave</li>
+      <li>Exibir prompt para tipo da nave</li>
+      <li>Exibir prompt para velocidade máx da nave</li>
+      <li>Exibir prompt para saber se usuário quer acelerar ou parar</li>
+      <ul>
+        <li>Se ele quiser parar, exibir mensagem final</li>
+        <li>Se quiser acelerar, prompt para usuário informar o quanto</li>
+        <li>
+          Exibir mensagem de alerta quando a velocidade máx for ultrapassada
+        </li>
+      </ul>
+      <li>Criar objeto para a nave</li>
+    </ol>
+    <script src="script.js"></script>
+  </body>
+</html>
