@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="spaceship.js"></script>
+    <script src="battle_spaceship.js"></script>
+    <script src="transport_spaceship.js"></script>
+    <script src="app.js"></script>
+    <script src="index.js"></script>
+
+    <title>Revisão de Classes</title>
+  </head>
+  <body>
+    <p>
+      Criação de sistema de monitoramento de nave espacial. Logo que o sistema é
+      iniciado, ele deve pedir os dados da nave. <br /><br />
+      Para a nave que for cadastrada, precisamos de:
+    </p>
+
+    <ul>
+      <li>Nome</li>
+      <li>Quantidade de tripulantes</li>
+      <li>Se a nave é de batalha ou transporte</li>
+    </ul>
+
+    <p>
+      Se a nave for de batalha, deverá pedir quantas armas a nave tem
+      disponível. Se for de transporte, o numero de lugares que ela comporta.
+    </p>
+
+    <p>A nave deve ter iniciada com velocidade atual igual a 0</p>
+
+    <p>Um meno deverá ser apresentado ao usuário com as opções:</p>
+
+    <ul>
+      <li>Acelerar a nave</li>
+      <li>Trocar a nave</li>
+      <li>Imprimir e sair</li>
+    </ul>
+
+    <p>Para acelerar a nave, é necessário pedir a aceleração.</p>
+
+    <p>
+      A velocidade deve aumentar 83% da aceleração passada como parâmetro devido
+      à taxa de desaceleração.
+    </p>
+
+    <p>
+      Outra importante funcionalidade é trocar a nave. Para trocar, todos os
+      dados de cadastro serão solicitados novamente e a nova nave será iniciada
+      com velocidade 0. Na última opção, precisa imprimir a espaçonave e sair:
+    </p>
+
+    <ul>
+      <li>Nome</li>
+      <li>Quantiadde de tripulantes</li>
+      <li>Velocidade atual</li>
+    </ul>
+
+    <p>
+      Para a nossa aplicação, toda aceleração tem uma taxa fixa de desaceleração
+      fixa de 17%: velocidade atual + (aceleração *(1 - taxa de desaceleração))
+    </p>
+  </body>
+</html>
