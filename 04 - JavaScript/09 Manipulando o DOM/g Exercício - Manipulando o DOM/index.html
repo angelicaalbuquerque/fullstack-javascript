@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/index.js"></script>
+    <title>Exercício - Manipulando o DOM</title>
+  </head>
+  <body>
+    <section id="descricao-exercicio">
+      <h1>Exercício</h1>
+      <p>
+        Adicionar uma lista de casas e precisamos de apenas 4 informações:
+        número da residência, bairro, cidade e área da casa.
+      </p>
+      <p>
+        Devem ser exibidos para o usuário os 4 campos para que ele possa
+        preencher as informações da casa. Quando ele clicar no botão
+        "Adicionar", a casa deve ser adicionada numa lista logo abaixo do
+        formulário.
+      </p>
+      <p>
+        Quando este elemento for adicionado a lista, ele deve vir com um botão
+        "Remover" onde, quando clicado, o elemento é reomovido da lista.
+      </p>
+
+      <p>para fazer a atividade, precisaremos pesquisar:</p>
+
+      <ul>
+        <li>A função createElement</li>
+        <li>Função setAttribute</li>
+        <li>Função removeChild</li>
+        <li>Sobre parentNode</li>
+      </ul>
+
+      <p>E também precisaremos:</p>
+
+      <ul>
+        <li>Criar o form com os campos e o botão</li>
+        <li>
+          Criar a função que vai adicionar os elementos na lista abaixo do
+          formulário
+        </li>
+        <li>Criar a função de remover</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <form>
+      <h2>Registro de Imóvel</h2>
+      <p>
+        <label>Area: </label>
+        <input type="text" name="area" />
+      </p>
+
+      <p>
+        <label>Numero: </label>
+        <input type="text" name="number" />
+      </p>
+
+      <p>
+        <label>Bairro: </label>
+        <input type="text" name="neighborhood" />
+      </p>
+
+      <p>
+        <label>Cidade: </label>
+        <input type="text" name="city" />
+      </p>
+
+      <button onclick="saveHouse()" type="button">Salvar</button>
+    </form>
+
+    <ul id="house-list"></ul>
+  </body>
+</html>
