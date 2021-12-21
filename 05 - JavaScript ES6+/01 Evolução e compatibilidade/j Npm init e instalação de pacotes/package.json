@@ -1,0 +1,27 @@
+{
+  "name": "npm_class",
+  "version": "1.0.0",
+  "description": "Aula para estudar NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelicaalbuquerque/fullstack-javascript.git"
+  },
+  "keywords": [
+    "NPM",
+    "class",
+    "study"
+  ],
+  "author": "Angelica Albuquerque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelicaalbuquerque/fullstack-javascript/issues"
+  },
+  "homepage": "https://github.com/angelicaalbuquerque/fullstack-javascript#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
