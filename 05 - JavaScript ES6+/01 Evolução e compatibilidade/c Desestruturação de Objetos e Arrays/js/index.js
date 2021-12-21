@@ -1,11 +1,7 @@
-let spaceship = {
-  name: "Colossus",
-  crewQuantity: 10,
-  isHitched: false,
-};
+let spaceships = ["Colossus", "Ártemis", "Fênix"];
 
-let { name: spaceshipName, crewQuantity } = spaceship;
-// let spaceshipName = spaceship.name;
-// let crewQuantity = spaceship.crewQuantity;
+let [colossus, artemis] = spaceships;
+// let colossus = spaceships[0];
+// let artemis = spaceships[1];
 
-console.log(spaceshipName, crewQuantity);
+console.log(colossus, artemis);
