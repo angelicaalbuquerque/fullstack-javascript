@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      li {
+        margin-top: 0.875rem;
+      }
+    </style>
+    <title>Exercício CommonJS</title>
+  </head>
+  <body>
+    <p>
+      Armazenar informaões sobre o sistema solar. Para isso, temos uam lista de
+      planetas e a distância dele ao sol em Unidade Astronômica (AU).
+    </p>
+    <p>
+      Para cada pleneta nesta lista, queremos imprimir a distância em AU e
+      também a distância em Quilômetros.
+    </p>
+
+    <ol>
+      <li>Crie um módulo para uma classe Planeta</li>
+      <li>
+        Crie um módulo para armazenar as infos de cálculo e a operação de
+        conversão de distância, sendo:
+      </li>
+      <ul>
+        <li>1AU = 149.587.870km</li>
+        <li>
+          Neste módulo, crie uma constante com o valor de 1AU em Quilômetros
+        </li>
+        <li>Crie uma função de conversão para esta operação</li>
+        <li>Exporte um objeto com estes dois dados</li>
+      </ul>
+      <li>Importe estes dois módulos num arquivo</li>
+      <li>
+        Crie uma lista com os planetas do sistema solar como objetos da classe
+        criada
+      </li>
+      <li>Cada planeta tem a seguinte distância em AU para o Sol:</li>
+      <ul>
+        <li>Mercurio: 0,39</li>
+        <li>Vênus: 0,72</li>
+        <li>Terra: 1</li>
+        <li>Marte: 1,52</li>
+        <li>Jupiter: 5,2</li>
+        <li>Saturno: 9,53</li>
+        <li>Urano: 19,1</li>
+        <li>Neturno: 30</li>
+      </ul>
+      <li>
+        Percorra essa lista e imprima no console a distância em AU e em
+        Quilômetros de cada planeta.
+      </li>
+    </ol>
+    <p>
+      Dica: utilize o método toFixed para imprimir a conversão com 2 casas
+      decimais.
+    </p>
+  </body>
+</html>
