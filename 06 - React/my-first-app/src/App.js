@@ -1,6 +1,5 @@
-function HelloWorld() {
-  return <h1>Hello World</h1>;
-}
+import React from "react";
+import HelloWorld from "./Hello";
 
 function App() {
   return (
