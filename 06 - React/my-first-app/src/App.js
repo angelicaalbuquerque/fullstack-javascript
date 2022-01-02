@@ -1,5 +1,13 @@
+function HelloWorld() {
+  return <h1>Hello World</h1>;
+}
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <HelloWorld />
+    </div>
+  );
 }
 
 export default App;
