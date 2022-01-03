@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import GrayImg from "../../shared/gray_img";
 
 const Planet = () => {
   return (
@@ -11,11 +11,7 @@ const Planet = () => {
         excentricidade e o seu eixo apresenta a menor inclinação em relação ao
         plano da órbita dentre todos os planetas do Sistema Solar.
       </p>
-      <img
-        class="gray-img"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/280px-Mercury_in_color_-_Prockter07-edit1.jpg"
-        alt="Planeta Mercúrio"
-      />
+      <GrayImg />
     </div>
   );
 };
