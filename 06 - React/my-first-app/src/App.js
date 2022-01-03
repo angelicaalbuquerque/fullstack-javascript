@@ -1,12 +1,10 @@
 import React from "react";
-import LoremIpsum from "./components/Lorem";
-import HelloWorld from "./Hello";
+import Planets from "./components/planets";
 
 function App() {
   return (
     <div>
-      <HelloWorld />
-      <LoremIpsum />
+      <Planets />
     </div>
   );
 }
