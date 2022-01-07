@@ -25,14 +25,32 @@ class Planets extends React.Component {
           img_url:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/280px-Pluto_in_True_Color_-_High-Res.jpg",
         },
+        {
+          name: "Plutão",
+          description:
+            "Plutão, formalmente designado 134340 Plutão, é um planeta anão do Sistema Solar e o nono maior e décimo mais massivo objeto observado diretamente orbitando o Sol. ",
+          link: "https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)",
+          link_description: "Saiba mais",
+          img_url:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/280px-Pluto_in_True_Color_-_High-Res.jpg",
+        },
       ],
     };
   }
+
+  removeLast = () => {
+    let new_planets = [...this.state.planets];
+    new_planets.pop();
+    this.setState((state) => ({
+      planets: new_planets,
+    }));
+  };
 
   render() {
     return (
       <Fragment>
         <h3>Lista de Planetas</h3>
+        <button onClick={this.removeLast}>Remover último</button>
         <hr />
         {this.state.planets.map((planet) => (
           <Planet
