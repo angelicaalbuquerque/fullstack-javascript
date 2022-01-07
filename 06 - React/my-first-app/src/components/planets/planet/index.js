@@ -2,7 +2,29 @@ import React from "react";
 import DescriptonWithLink from "../../shared/DescriptionWithLink";
 import GrayImg from "../../shared/gray_img";
 
+//método que chama a API
+async function getSatellites(id) {
+  let response = await fetch(`http://localhost:3000/api/${id}.json`);
+  let data = await response.json();
+  return data;
+}
+
 class Planet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      satellites: [],
+    };
+  }
+
+  componentDidMount() {
+    getSatellites(this.props.id).then((data) => {
+      this.setState((state) => ({
+        satellites: data["satellites"],
+      }));
+    });
+  }
+
   render() {
     let title;
 
@@ -25,6 +47,12 @@ class Planet extends React.Component {
           link_description={this.props.link_description}
         />
         <GrayImg img_url={this.props.img_url} gray={this.props.gray} />
+        <ul>
+          {this.state.satellites.map((satellite, index) => (
+            <li key={index}>{satellite.name}</li>
+          ))}
+        </ul>
+
         <hr />
       </div>
     );
