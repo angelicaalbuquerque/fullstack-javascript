@@ -1,6 +1,13 @@
 import React, { Fragment } from "react";
 import Planet from "./planet";
 
+//método para chamar endpoint + transformação em json
+async function getPlanets() {
+  let response = await fetch("http://localhost:3000/api/planets.json");
+  let data = await response.json();
+  return data;
+}
+
 class Planets extends React.Component {
   constructor(props) {
     super(props);
@@ -8,6 +15,15 @@ class Planets extends React.Component {
     this.state = {
       planets: [],
     };
+  }
+
+  //chamada do método assíncrono e para, quando terminar, processar pegando o data e dando um setState()
+  componentDidMount() {
+    getPlanets().then((data) => {
+      this.setState((state) => ({
+        planets: data["planets"],
+      }));
+    });
   }
 
   removeLast = () => {
