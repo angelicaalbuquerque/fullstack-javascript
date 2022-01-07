@@ -23,7 +23,7 @@ const Planet = (props) => {
         link={props.link}
         link_description={props.link_description}
       />
-      <GrayImg img_url={props.img_url} />
+      <GrayImg img_url={props.img_url} gray={props.gray} />
     </div>
   );
 };

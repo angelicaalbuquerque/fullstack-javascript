@@ -21,6 +21,7 @@ const Planets = () => {
         img_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/280px-Mercury_in_color_-_Prockter07-edit1.jpg"
         clickOnPlanet={clickOnPlanet}
         title_with_underline={true}
+        gray={true}
       />
       <Planet
         name="Plutão"
