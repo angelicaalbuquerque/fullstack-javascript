@@ -3,6 +3,9 @@ import DescriptonWithLink from "../../shared/DescriptionWithLink";
 import GrayImg from "../../shared/gray_img";
 
 const Planet = (props) => {
+  const names = ["a", "b", "c", "d"];
+  const satallites = names.map((n) => <li>Satélite {n}</li>);
+
   let title;
 
   if (props.title_with_underline) {
@@ -24,6 +27,10 @@ const Planet = (props) => {
         link_description={props.link_description}
       />
       <GrayImg img_url={props.img_url} gray={props.gray} />
+
+      <h4>Satélites</h4>
+      <ul>{satallites}</ul>
+      <hr />
     </div>
   );
 };
