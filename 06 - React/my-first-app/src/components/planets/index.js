@@ -24,7 +24,7 @@ const Planets = () => {
       <Planet
         name="Plutão"
         description="Plutão, formalmente designado 134340 Plutão, é um planeta anão do Sistema Solar e o nono maior e décimo mais massivo objeto observado diretamente orbitando o Sol. "
-        link="https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)"
+        // link="https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)"
         link_description="Saiba mais"
         img_url="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/280px-Pluto_in_True_Color_-_High-Res.jpg"
         clickOnPlanet={clickOnPlanet}
