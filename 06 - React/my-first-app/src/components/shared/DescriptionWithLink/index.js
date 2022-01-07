@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 
 const DescriptonWithLink = (props) => {
+  if (!props.description) {
+    return null;
+  }
+
   if (props.link) {
     return (
       <Fragment>
