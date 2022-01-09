@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Planet from "./planet";
 
 //método para chamar endpoint + transformação em json
@@ -8,28 +8,16 @@ async function getPlanets() {
   return data;
 }
 
-//chamada do método assíncrono e para, quando terminar, processar pegando o data e dando um setState()
-// componentDidMount() {
-//   getPlanets().then((data) => {
-//     setState((state) => ({
-//       planets: data["planets"],
-//     }));
-//   });
-// }
-
 const Planets = () => {
   //planets: onde vai ficar; setPlanets: método para alterar aquele estado do useState
-  const [planets, setPlanets] = useState([
-    {
-      id: "mars",
-      name: "Mars",
-      description:
-        "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war and is often referred to as the 'Red Planet'.",
-      img_url:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/220px-OSIRIS_Mars_true_color.jpg",
-      link: "https://en.wikipedia.org/wiki/Mars",
-    },
-  ]);
+  const [planets, setPlanets] = useState([]);
+
+  //array vazio sendo passado para rodar somente na hora da montagem do componente
+  useEffect(() => {
+    getPlanets().then((data) => {
+      setPlanets(data["planets"]);
+    });
+  }, []);
 
   const removeLast = () => {
     let new_planets = [...planets];
