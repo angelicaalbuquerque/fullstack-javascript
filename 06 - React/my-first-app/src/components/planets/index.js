@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Planet from "./planet";
 
 //método para chamar endpoint + transformação em json
@@ -8,60 +8,59 @@ async function getPlanets() {
   return data;
 }
 
-class Planets extends React.Component {
-  constructor(props) {
-    super(props);
+//chamada do método assíncrono e para, quando terminar, processar pegando o data e dando um setState()
+// componentDidMount() {
+//   getPlanets().then((data) => {
+//     setState((state) => ({
+//       planets: data["planets"],
+//     }));
+//   });
+// }
 
-    this.state = {
-      planets: [],
-    };
-  }
+const Planets = () => {
+  //planets: onde vai ficar; setPlanets: método para alterar aquele estado do useState
+  const [planets, setPlanets] = useState([
+    {
+      id: "mars",
+      name: "Mars",
+      description:
+        "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war and is often referred to as the 'Red Planet'.",
+      img_url:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/220px-OSIRIS_Mars_true_color.jpg",
+      link: "https://en.wikipedia.org/wiki/Mars",
+    },
+  ]);
 
-  //chamada do método assíncrono e para, quando terminar, processar pegando o data e dando um setState()
-  componentDidMount() {
-    getPlanets().then((data) => {
-      this.setState((state) => ({
-        planets: data["planets"],
-      }));
-    });
-  }
-
-  removeLast = () => {
-    let new_planets = [...this.state.planets];
+  const removeLast = () => {
+    let new_planets = [...planets];
     new_planets.pop();
-    this.setState((state) => ({
-      planets: new_planets,
-    }));
+    setPlanets(new_planets);
   };
 
-  duplicateLastPlanet = () => {
-    let last_planet = this.state.planets[this.state.planets.length - 1];
-    this.setState((state) => ({
-      planets: [...this.state.planets, last_planet],
-    }));
+  const duplicateLastPlanet = () => {
+    let last_planet = planets[planets.length - 1];
+    setPlanets([...planets, last_planet]);
   };
 
-  render() {
-    return (
-      <Fragment>
-        <h3>Lista de Planetas</h3>
-        <button onClick={this.removeLast}>Remover último</button>
-        <button onClick={this.duplicateLastPlanet}>Duplicar último</button>
-        <hr />
-        {this.state.planets.map((planet, index) => (
-          <Planet
-            key={index}
-            id={planet.id}
-            name={planet.name}
-            description={planet.description}
-            link={planet.link}
-            link_description={planet.link_description}
-            img_url={planet.img_url}
-          />
-        ))}
-      </Fragment>
-    );
-  }
-}
+  return (
+    <Fragment>
+      <h3>Lista de Planetas</h3>
+      <button onClick={removeLast}>Remover último</button>
+      <button onClick={duplicateLastPlanet}>Duplicar último</button>
+      <hr />
+      {planets.map((planet, index) => (
+        <Planet
+          key={index}
+          id={planet.id}
+          name={planet.name}
+          description={planet.description}
+          link={planet.link}
+          link_description={planet.link_description}
+          img_url={planet.img_url}
+        />
+      ))}
+    </Fragment>
+  );
+};
 
 export default Planets;
