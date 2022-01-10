@@ -20,9 +20,15 @@ const Planets = () => {
     });
   }, []);
 
+  const addPlanet = (new_planet) => {
+    setPlanets([...planets, new_planet]);
+  };
+
   return (
     <Fragment>
       <h3>Lista de Planetas</h3>
+      <hr />
+      <Form addPlanet={addPlanet} />
       <hr />
       {planets.map((planet, index) => (
         <Planet
