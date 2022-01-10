@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Planet from "./planet";
+import Form from "./form";
 
 //método para chamar endpoint + transformação em json
 async function getPlanets() {
@@ -19,22 +20,9 @@ const Planets = () => {
     });
   }, []);
 
-  const removeLast = () => {
-    let new_planets = [...planets];
-    new_planets.pop();
-    setPlanets(new_planets);
-  };
-
-  const duplicateLastPlanet = () => {
-    let last_planet = planets[planets.length - 1];
-    setPlanets([...planets, last_planet]);
-  };
-
   return (
     <Fragment>
       <h3>Lista de Planetas</h3>
-      <button onClick={removeLast}>Remover último</button>
-      <button onClick={duplicateLastPlanet}>Duplicar último</button>
       <hr />
       {planets.map((planet, index) => (
         <Planet
