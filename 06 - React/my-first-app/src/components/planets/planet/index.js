@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DescriptonWithLink from "../../shared/DescriptionWithLink";
 import GrayImg from "../../shared/gray_img";
+import Form from "./form";
 
 //método que chama a API
 async function getSatellites(id) {
@@ -17,6 +18,10 @@ const Planet = (props) => {
       setSatellites(data["satellites"]);
     });
   }, []);
+
+  const addSatellite = (new_satellite) => {
+    setSatellites([...satellites, new_satellite]);
+  };
 
   let title;
 
@@ -39,6 +44,11 @@ const Planet = (props) => {
         link_description={props.link_description}
       />
       <GrayImg img_url={props.img_url} gray={props.gray} />
+      <h4>Satélites</h4>
+      <hr />
+      <Form addSatellite={addSatellite} />
+      <hr />
+
       <ul>
         {satellites.map((satellite, index) => (
           <li key={index}>{satellite.name}</li>
