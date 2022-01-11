@@ -1,13 +1,16 @@
 import React, { Fragment, useState, useEffect } from "react";
 
+const initialState = {
+  name: "",
+  description: "",
+  link: "",
+  img_url: "",
+  link_description: "",
+};
+
 const Form = (props) => {
-  const [fields, setFields] = useState({
-    name: "",
-    description: "",
-    link: "",
-    img_url: "",
-    link_description: "",
-  });
+  const [fields, setFields] = useState(initialState);
+  //chamada ao initialState para preencher os campos
 
   const [name, setName] = useState("");
   const handleFieldsChange = (event) =>
@@ -19,6 +22,9 @@ const Form = (props) => {
   const handleSubmit = (event) => {
     props.addPlanet(fields);
     event.preventDefault();
+
+    setFields(initialState);
+    //para limpar os campos do form
   };
 
   return (
