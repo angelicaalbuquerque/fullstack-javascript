@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import DescriptonWithLink from "../shared/DescriptionWithLink";
 import GrayImg from "../shared/gray_img";
@@ -61,6 +61,7 @@ const Planet = () => {
       </ul>
 
       <hr />
+      <Link to="/">Voltr a listagem</Link>
     </div>
   );
 };

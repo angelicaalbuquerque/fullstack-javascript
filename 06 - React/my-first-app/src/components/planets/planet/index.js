@@ -2,6 +2,8 @@ import React from "react";
 import DescriptonWithLink from "../../shared/DescriptionWithLink";
 import GrayImg from "../../shared/gray_img";
 
+import { Link } from "react-router-dom";
+
 const Planet = (props) => {
   let title;
 
@@ -17,7 +19,7 @@ const Planet = (props) => {
 
   return (
     <div onClick={() => props.clickOnPlanet(props.name)}>
-      {title}
+      <Link to={`/planet/${props.id}`}> {title}</Link>
       <DescriptonWithLink
         description={props.description}
         link={props.link}
