@@ -52,9 +52,7 @@ const Planet = () => {
     title = <h4>{planet.name}</h4>;
   }
 
-  if (redirect) {
-    <Redirect to="/" />;
-  }
+  if (redirect) return <Redirect to="/" />;
 
   return (
     <div>
