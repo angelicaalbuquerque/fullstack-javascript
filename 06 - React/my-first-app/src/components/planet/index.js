@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import DescriptonWithLink from "../shared/DescriptionWithLink";
 import GrayImg from "../shared/gray_img";
 import Form from "./form";
 
 //método que chama a API
-async function getSatellites(id) {
+async function getPlanet(id) {
   let response = await fetch(`http://localhost:3000/api/${id}.json`);
   let data = await response.json();
   return data;
 }
 
-const Planet = (props) => {
+const Planet = () => {
   const [satellites, setSatellites] = useState([]);
+  const [planet, setPlanet] = useState({});
+  let { id } = useParams();
 
   useEffect(() => {
-    getSatellites(props.id).then((data) => {
+    getPlanet(id).then((data) => {
       setSatellites(data["satellites"]);
+      setPlanet(data["data"]);
     });
   }, []);
 
@@ -25,25 +30,25 @@ const Planet = (props) => {
 
   let title;
 
-  if (props.title_with_underline) {
+  if (planet.title_with_underline) {
     title = (
       <h4>
-        <u>{props.name}</u>
+        <u>{planet.name}</u>
       </h4>
     );
   } else {
-    title = <h4>{props.name}</h4>;
+    title = <h4>{planet.name}</h4>;
   }
 
   return (
-    <div onClick={() => props.clickOnPlanet(props.name)}>
+    <div onClick={() => planet.clickOnPlanet(planet.name)}>
       {title}
       <DescriptonWithLink
-        description={props.description}
-        link={props.link}
-        link_description={props.link_description}
+        description={planet.description}
+        link={planet.link}
+        link_description={planet.link_description}
       />
-      <GrayImg img_url={props.img_url} gray={props.gray} />
+      <GrayImg img_url={planet.img_url} gray={planet.gray} />
       <h4>Satélites</h4>
       <hr />
       <Form addSatellite={addSatellite} />
