@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 
 import DescriptonWithLink from "../shared/DescriptionWithLink";
 import GrayImg from "../shared/gray_img";
@@ -15,14 +15,21 @@ async function getPlanet(id) {
 const Planet = () => {
   const [satellites, setSatellites] = useState([]);
   const [planet, setPlanet] = useState({});
+  const [redirect, setRedirect] = useState(false);
+
   let { id } = useParams();
   let history = useHistory();
 
   useEffect(() => {
-    getPlanet(id).then((data) => {
-      setSatellites(data["satellites"]);
-      setPlanet(data["data"]);
-    });
+    getPlanet(id).then(
+      (data) => {
+        setSatellites(data["satellites"]);
+        setPlanet(data["data"]);
+      },
+      (error) => {
+        setRedirect(true);
+      },
+    );
   }, []);
 
   const goToPlanets = () => {
@@ -45,8 +52,12 @@ const Planet = () => {
     title = <h4>{planet.name}</h4>;
   }
 
+  if (redirect) {
+    <Redirect to="/" />;
+  }
+
   return (
-    <div onClick={() => planet.clickOnPlanet(planet.name)}>
+    <div>
       {title}
       <DescriptonWithLink
         description={planet.description}

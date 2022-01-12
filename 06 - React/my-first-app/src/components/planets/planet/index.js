@@ -18,7 +18,7 @@ const Planet = (props) => {
   }
 
   return (
-    <div onClick={() => props.clickOnPlanet(props.name)}>
+    <div>
       <Link to={`/planet/${props.id}`}> {title}</Link>
       <DescriptonWithLink
         description={props.description}
