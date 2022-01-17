@@ -1,5 +1,5 @@
 const fs = require("fs");
 
-fs.writeFile("test.txt", "Olá, NodeJS", (err) => {
+fs.rename("test.txt", "test_2.txt", (err) => {
   console.log(err);
 });
